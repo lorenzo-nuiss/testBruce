@@ -5,8 +5,8 @@
   "scripts": {
     "build": "rm -rf out; tsc -p tsconfig.json",
     "verify": "rm -rf out; tsc -p tsconfig.json; jest out/test/check",
-    "winbuild": "rmdir out; tsc -p tsconfig.json",
-    "winverify": "rmdir out; tsc -p tsconfig.json; jest out/test/check",
+    "winbuild": "rd /s /q out &&; tsc -p tsconfig.json",
+    "winverify": "rd /s /q out && tsc -p tsconfig.json && jest \"out/test/check\"",
     "lint": "tslint --project .",
     "fullverify": "rm -rf out; tsc -p tsconfig.json; jest out/test/check; tslint --project ."
   },
